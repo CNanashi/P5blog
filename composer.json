@@ -1,0 +1,21 @@
+{
+    "name": "root/router",
+    "authors": [
+        {
+            "name": "Nana",
+            "email": "Nasunalink@gmail.com"
+        }
+    ],
+		"autoload": {
+		"psr-4": {
+			"App\\": "src"
+		}
+	},
+    "require": {
+        "twig/twig": "~1.0",
+        "twig/extensions": "^1.5",
+        "twitter/bootstrap": "^4.0",
+        "components/jquery": "^3.3",
+        "fortawesome/font-awesome": "^4.7"
+    }
+}
