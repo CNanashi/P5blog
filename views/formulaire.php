@@ -6,7 +6,7 @@
 	<body>
 
 	</body>
-</html>
+
     <!-- Contact Section -->
     <form  method="post" action="post_contact.php" id="contact">
         <div class="container">
@@ -62,3 +62,5 @@
         </div>
 		
     </form>
+
+</html>

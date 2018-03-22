@@ -26,15 +26,15 @@ $loader = new Twig_Loader_Filesystem(__DIR__ . '/templates');
 $twig = new Twig_Environment($loader, [
     'cache' => false, //__DIR__ . '/tmp'
 
-    ]);
+]);
 
     switch ($page) {
         case 'contact';
-        echo $twig->render('contact.twig');
-        break;
+            echo $twig->render('contact.twig');
+            break;
         case 'home';
-        echo $twig->render('home.twig', ['tutoriel' => tutoriels()]);
-        break;
+            echo $twig->render('home.twig', ['tutoriel' => tutoriels()]);
+            break;
         default:
             header('HTTP/1.0 404 Not found');
             echo $twig->render('404.twig');
