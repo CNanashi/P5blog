@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 22 mars 2018 à 17:42
+-- Généré le :  mer. 28 mars 2018 à 09:27
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS `article` (
   `author` varchar(100) NOT NULL,
   `chapo` text,
   `content` mediumtext NOT NULL,
-  `add_article` datetime DEFAULT NULL,
-  `edit_article` datetime NOT NULL,
+  `date_add` datetime NOT NULL,
+  `date_edit` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`article_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -50,9 +50,10 @@ DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `comment_id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `datecom` datetime NOT NULL,
+  `date_add` datetime NOT NULL,
   `user_id` int(11) NOT NULL,
   `article_id` int(11) NOT NULL,
+  `date_edit` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`comment_id`),
   KEY `FK_Comments_user_id` (`user_id`),
   KEY `FK_Comments_post_id` (`article_id`)
@@ -69,9 +70,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL,
   `permission` smallint(6) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `Username` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `creationDate` datetime NOT NULL,
+  `date_add` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_edit` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
