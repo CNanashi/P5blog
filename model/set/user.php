@@ -1,7 +1,7 @@
 <?php
 
 
-class User extends Hydration
+class user extends Model
 {
      private $user_id;
      private $permission;
@@ -15,7 +15,7 @@ class User extends Hydration
     {
         $this->hydrate($data);
     }
-    public function setUser_id($id)
+    public function setUserId($id)
     {
         $id = (int) $id;
         $this->user_id = $id;
@@ -40,16 +40,16 @@ class User extends Hydration
     {
         $this->password = $password;
     }
-    public function setDate_add($date)
+    public function setDateAdd($date)
     {
         $this->date_add = $date;
     }
 
-    public function setDate_edit($date)
+    public function setDateEdit($date)
     {
         $this->date_edit = $date;
     }
-    public function getUser_id()
+    public function getUserId()
     {
         return $this->user_id;
     }
@@ -69,12 +69,12 @@ class User extends Hydration
     {
         return $this->password;
     }
-    public function getDate_add()
+    public function getDateAdd()
     {
         return $this->date_add;
     }
 
-    public function getDate_edit()
+    public function getDateEdit()
     {
         return $this->date_edit;
     }

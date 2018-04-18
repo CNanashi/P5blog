@@ -1,6 +1,6 @@
 <?php
 
-class Article extends Hydration
+class Article extends Model
 {
         private $article_id;
         private $title;
@@ -14,20 +14,20 @@ class Article extends Hydration
     {
         $this->hydrate($data);
     }
-    public function setArticle_id($id)
+    public function setArticleId($id)
     {
         $id = (int) $id;
         if(is_int($id) && $id >= 0) {
             $this->article_id = $id;
         }
     }
-    public function setDate_add($date)
+    public function setDateAdd($date)
     {
         if(!empty($date)) {
             $this->date_add = $date;
         }
     }
-    public function setDate_edit($date)
+    public function setDateEdit($date)
     {
         if(!empty($date)) {
             $this->date_edit = $date;
@@ -58,11 +58,11 @@ class Article extends Hydration
             $this->author = $author;
         }
     }
-    public function getArticle_Id()
+    public function getArticleId()
     {
         return $this->article_id;
     }
-    public function getDate_add()
+    public function getDateAdd()
     {
         return $this->date_add;
     }
@@ -79,7 +79,7 @@ class Article extends Hydration
         return $this->content;
     }
 
-    public function getDate_edit()
+    public function getDateEdit()
     {
         return $this->date_edit;
     }
@@ -87,4 +87,5 @@ class Article extends Hydration
     {
         return $this->author;
     }
+
 }
