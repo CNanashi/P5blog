@@ -1,18 +1,13 @@
 <?php
 
-abstract class Database{
-
-    public static function getDB($db)
-    {
-        $pdo = Configuration::getInstance();
+class Database{
+    public static function getDB(){
         try {
-            switch ($db) {
-                case "mysql":
-                    return new \PDO("mysql:host=" . $pdo->get('db_hostname') . ";dbname=" . $pdo->get('db_name'), $pdo->get('db_user'), $pdo->get('db_password'));
-                default:
-                    throw new \PDOException("error");
-            }
-        } catch (\PDOException $e) {
+            $db = new PDO('mysql:host=localhost;dbname=blogp5', 'root', '');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $db;
+        }
+        catch (\PDOException $e) {
             die("Error : " . $e->getMessage());
         }
     }

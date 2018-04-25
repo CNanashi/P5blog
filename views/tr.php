@@ -73,7 +73,7 @@ require'header.php';
 require'others.php';
 require'cv.php';
 require'formulaire.php';
-require'footer.php';
+require 'footer.php';
 
 ?>
 

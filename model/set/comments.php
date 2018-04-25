@@ -1,6 +1,5 @@
 <?php
-
-class Comments extends Hydration
+class Comments extends Model
 {
     private $comment_id;
     private $content;
@@ -8,39 +7,42 @@ class Comments extends Hydration
     private $date_edit;
     private $user_id;
     private $article_id;
-
+    private $authors;
     public function __construct(array $data)
     {
         $this->hydrate($data);
     }
-    public function setComment_id($id)
+    public function setCommentId($id)
     {
-        $id = (int) $id;
+        $id = (int)$id;
         ($id >= 0) ? $this->comment_id = $id : null;
     }
     public function setContent($content)
     {
         $this->content = $content;
     }
-    public function setDate_add($date)
+    public function setDateAdd($date)
     {
         $this->date_add = $date;
     }
-    public function setDate_edit($date)
+    public function setDateEdit($date)
     {
         $this->date_edit = $date;
     }
-    public function setUser_id($id)
+    public function setUserId($id)
     {
-        $id = (int) $id;
+        $id = (int)$id;
         ($id >= 0) ? $this->user_id = $id : null;
     }
-    public function setArticle_id($id)
+    public function setArticleId($id)
     {
-        $id = (int) $id;
+        $id = (int)$id;
         ($id >= 0) ? $this->article_id = $id : null;
     }
-    public function getComment_id()
+    public function setAuthors(){
+        return $this->authors;
+    }
+    public function getCommentId()
     {
         return $this->comment_id;
     }
@@ -48,21 +50,24 @@ class Comments extends Hydration
     {
         return $this->content;
     }
-    public function getDate_add()
+    public function getDateAdd()
     {
         return $this->date_add;
     }
-    public function getDate_edit()
+    public function getDateEdit()
     {
         return $this->date_edit;
     }
-    public function getUser_id()
+    public function getUserId()
     {
         return $this->user_id;
     }
-    public function getArticle_id()
+    public function getArticleId()
     {
         return $this->article_id;
     }
-
+    public function getAuthors()
+    {
+        return $this->authors;
+    }
 }
