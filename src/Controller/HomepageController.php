@@ -13,11 +13,12 @@ class HomepageController extends Controller
 
     public function show()
     {
-        if(isset($_POST["submit"])) {
+        require dirname(dirname(__DIR__)). "/views/layout.php";
+        /*if(isset($_POST["submit"])) {
             $this->generatePage("Home", compact("msg"));
             return;
         }
         $this->generatePage("Home");
-        return;
+        return;*/
     }
 }

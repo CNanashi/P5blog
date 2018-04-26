@@ -11,9 +11,11 @@ abstract class Controller
     {
         $view = strtolower($name);
         if(!preg_match("#[\.]+#", $name)) {
-            $template = $this->controllerName = trim(preg_replace("#Controller#", "", $this->controllerName), "\\");
-            $template = $this->controllerName = strtolower($this->controllerName);
+            echo "if";
+           $this->controllerName = trim(preg_replace("#Controller#", "", $this->controllerName), "\\");
+            $template = strtolower($this->controllerName);
         } else {
+            echo "else";
             $nameExploded = explode(".", $name);
             $template = $nameExploded[0];
             $view = $nameExploded[1];
