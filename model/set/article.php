@@ -1,4 +1,5 @@
 <?php
+
 class Article extends Model
 {
     private $article_id;
@@ -75,6 +76,7 @@ class Article extends Model
     {
         return $this->content;
     }
+
     public function getDateEdit()
     {
         return $this->date_edit;
@@ -83,4 +85,5 @@ class Article extends Model
     {
         return $this->author;
     }
+
 }

@@ -1,10 +1,12 @@
 <?php
+abstract class Manager{
 
-class Database{
-<<<<<<< HEAD
-=======
+    protected $dbh;
 
->>>>>>> 53fe931463b07ea5b201e7e913b3b09f6ec3b37a
+    public function __construct()
+    {
+        $this->dbh=Database::getDB();
+    }
     public static function getDB(){
         try {
             $db = new PDO('mysql:host=localhost;dbname=blogp5', 'root', '');

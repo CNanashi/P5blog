@@ -1,4 +1,5 @@
 <?php
+
 class user extends Model
 {
     private $user_id;
@@ -41,6 +42,7 @@ class user extends Model
     {
         $this->date_add = $date;
     }
+
     public function setDateEdit($date)
     {
         $this->date_edit = $date;
@@ -69,6 +71,7 @@ class user extends Model
     {
         return $this->date_add;
     }
+
     public function getDateEdit()
     {
         return $this->date_edit;

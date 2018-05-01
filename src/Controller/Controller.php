@@ -21,7 +21,7 @@ abstract class Controller
             $view = $nameExploded[1];
         }
         $templateToLoad = ROOT . "/views/layout/" . strtolower($template ) . ".php";
-        $viewToLoad = ROOT . "/views/" . strtolower($view ) . "layout.php";
+        $viewToLoad = ROOT . "/views/" . strtolower($view ) . "ViewHome.php";
         ob_start();
         extract($args);
         require $viewToLoad;
@@ -29,5 +29,25 @@ abstract class Controller
         require $templateToLoad;
     }
 
+    protected function generateViewOnly($name, $args = [])
+    {
+        $viewToLoad = ROOT . "/view/" . strtolower($name) . "View.php";
 
+        if(!file_exists($viewToLoad)) {
+            throw new \Exception("View doesn't exist");
+        }
+
+        extract($args);
+        require $viewToLoad;
+    }
+    protected function isConnected()
+    {
+        if(isset($_SESSION["userObject"])) {
+            if(is_object(unserialize($_SESSION["userObject"]))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
