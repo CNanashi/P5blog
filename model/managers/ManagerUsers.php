@@ -1,5 +1,5 @@
 <?php
-class ManagerUser extends Manager
+class ManagerUsers extends Manager
 {
     public function loginVerification($identifier, $pass)
     {

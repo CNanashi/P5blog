@@ -30,7 +30,7 @@ $router->get("/admin/article/delete/:id", "Back#delete")->with(":id", '[0-9]+');
 $router->post("/admin/article/edit/:id", "Back#edit")->with(":id", '[0-9]+');
 
 
-$router->get("/admin", "Back#homeadmin");
+$router->get("/admin", "Back#homeAdmin");
 
 $router->get("/admin/article/add", "Back#add")->with(":id", '[0-9]+');
 $router->post("/admin/article/add", "Back#add")->with(":id", '[0-9]+');
