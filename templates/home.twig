@@ -1,7 +1,7 @@
 {% extends 'layout.twig' %}
 
-{% block head %}*
-<title oui </title>
+{% block head %}
+<title> oui </title>
 {% endblock %}
 {% block content %}
 
@@ -13,10 +13,10 @@
             <img src="1{{ tutoriel.id }}.jpg" alt="" class="card-img-top">
         </div>
         <li>{{ tutoriel.name }}</li>
-
+   </div>
+        </div>
     {% endfor %}
 
-         </div>
-    </div>
+
 
 {% endblock %}

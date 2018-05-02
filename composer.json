@@ -16,6 +16,6 @@
         "twig/extensions": "^1.5",
         "twitter/bootstrap": "^4.0",
         "components/jquery": "^3.3",
-        "fortawesome/font-awesome": "^4.7"
+        "fort-awesome/font-awesome": "^4.7"
     }
 }

@@ -53,7 +53,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="articles.php">Articles</a>
+                        <a href="ViewArticle.php">Articles</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">CV</a>
@@ -67,15 +67,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <?php
-    require'header.php';
-    require'others.php';
-    require'cv.php';
-    require'formulaire.php';
-    require'footer.php';
-
-    ?>
 	
 	
 	  <!-- jQuery -->
