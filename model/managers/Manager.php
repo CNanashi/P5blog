@@ -5,7 +5,7 @@ abstract class Manager{
 
     public function __construct()
     {
-        $this->dbh=Database::getDB();
+        $this->dbh=Manager::getDB();
     }
     public static function getDB(){
         try {
